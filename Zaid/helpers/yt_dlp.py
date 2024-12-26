@@ -65,6 +65,7 @@ ydl_opts = {
     "extractor-args": "youtube:player_client=all",
     "nocheckcertificate": True,
     "outtmpl": "downloads/%(id)s.%(ext)s",
+    "cookiefile": cookiefile(),
 }
 ydl = YoutubeDL(ydl_opts)
 
