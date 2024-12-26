@@ -17,6 +17,12 @@ from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
 
 
+def cookiefile():
+    cookie_dir = "cookies"
+    cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
+
+    cookie_file = os.path.join(cookie_dir, cookies_files[0])
+    return cookie_file
 
 async def is_admin(chat_id, user_id):
     req_jo = await bot(GetParticipantRequest(
@@ -67,3 +73,27 @@ def download_lagu(url: str) -> str:
     info = ydl.extract_info(url, download=False)
     ydl.download([url])
     return os.path.join("downloads", f"{info['id']}.{info['ext']}")
+
+
+async def video(self, link: str, videoid: Union[bool, str] = None):
+        if videoid:
+            link = self.base + link
+        if "&" in link:
+            link = link.split("&")[0]
+        proc = await asyncio.create_subprocess_exec(
+            "yt-dlp",
+            "--cookies",
+            cookiefile(),
+            "-g",
+            "-f",
+            "best[height<=?720][width<=?1280]",
+            f"{link}",
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await proc.communicate()
+        if stdout:
+            return 1, stdout.decode().split("\n")[0]
+        else:
+            return 0, stderr.decode()
+
