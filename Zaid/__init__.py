@@ -3,10 +3,11 @@ import os
 from telethon import TelegramClient
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
+from config import Config
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 import logging as std_logging
 from Zaid.logging import LOGGER
-from Zaid.cookies import save_cookies
+from Zaid.cookies import load_cookies
 from pytgcalls import PyTgCalls
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 
