@@ -21,6 +21,7 @@ def LOGGER(name: str) -> logging.LOGGER:
 from Config import Config
 BOT_USERNAME = Config.BOT_USERNAME
 ASSISTANT_ID = Config.ASSISTANT_ID
+COOKIES_FILE = Config.COOKIES_FILE
 
 # Load cookies before initializing the client
 cookies = load_cookies()
@@ -30,7 +31,7 @@ bot = TelegramClient('Zaid', api_id=Config.API_ID, api_hash=Config.API_HASH)
 Zaid = bot.start(bot_token=Config.BOT_TOKEN)
 
 # Initialize the assistant client using StringSession and cookies
-client = TelegramClient(StringSession(Config.STRING_SESSION), Config.API_ID, Config.API_HASH)
+client = TelegramClient(StringSession(Config.STRING_SESSION), Config.API_ID, Config.API_HASH, Config.COOKIES_FILE)
 client.start()
 
 # Initialize call functionality
