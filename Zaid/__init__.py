@@ -12,6 +12,9 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.INFO)
 
+def LOGGER(name: str) -> logging.Logger:
+    return logging.getLogger(name)
+
 
 from Config import Config
 BOT_USERNAME = Config.BOT_USERNAME
