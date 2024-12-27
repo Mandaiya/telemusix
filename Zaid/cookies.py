@@ -1,4 +1,5 @@
 import logging 
+import config
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
