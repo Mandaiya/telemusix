@@ -4,13 +4,18 @@ from telethon import TelegramClient
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-import logging
+import logging as std_logging
+from Zaid.logging import LOGGER
 from Zaid.cookies import save_cookies
 from pytgcalls import PyTgCalls
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.INFO)
+# Use std_logging for built-in logging functionality
+std_logging.basicConfig(
+    format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+    level=std_logging.INFO
+)
+
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
