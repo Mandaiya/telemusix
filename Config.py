@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from os import getenv
 
 # Load environment variables from a .env file if it exists
 load_dotenv()
