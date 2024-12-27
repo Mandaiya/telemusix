@@ -1,5 +1,5 @@
 import logging 
-import config
+from config import COOKIES_FILE
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
