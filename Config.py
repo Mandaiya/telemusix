@@ -1,5 +1,8 @@
-import os
+import re
+import sys
 from os import getenv
+
+from dotenv import load_dotenv
 
 class Config(object):
     API_ID = int(os.environ.get("API_ID", "28045580"))
