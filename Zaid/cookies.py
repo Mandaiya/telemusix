@@ -1,7 +1,7 @@
 import os
 import requests
 import config
-from ..logging import LOGGER
+from Zaid.logging import LOGGER
 import sys
 
 sys.path.append("..")
