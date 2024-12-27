@@ -5,7 +5,7 @@ import config
 logging.basicConfig(level=logging.DEBUG)
 
 def load_cookies():
-    cookies_file = Config.COOKIES_FILE
+    cookies_file = config.COOKIES_FILE
     if os.path.exists(cookies_file):
         with open(cookies_file, 'r') as file:
             cookies = file.read()
