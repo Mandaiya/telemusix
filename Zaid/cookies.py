@@ -29,6 +29,8 @@ def save_file(pastebin_url, file_path="cookies/cookies.txt"):
 def save_cookies():
     print(vars(Config))
     full_url = str(Config.COOKIES)
+    print("Config attributes:", dir(Config))
+    print("COOKIES value:", getattr(Config, "COOKIES", "Attribute not found"))
     print(f"Full URL: {full_url}")
     paste_id = full_url.split("/")[-1]
     pastebin_url = f"https://batbin.me/raw/{paste_id}"
