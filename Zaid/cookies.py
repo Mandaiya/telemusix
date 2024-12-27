@@ -1,7 +1,7 @@
-from Zaid.logging import LOGGER
+import logging 
 
 # Set up logging
-logging.basicConfig(level=LOGGER.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 def load_cookies():
     cookies_file = Config.COOKIES_FILE
