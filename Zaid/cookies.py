@@ -1,6 +1,6 @@
 import os
 import requests
-import config
+from config import Config
 from Zaid.logging import LOGGER
 import sys
 
