@@ -2,6 +2,9 @@ import os
 import requests
 import config
 from ..logging import LOGGER
+import sys
+
+sys.path.append("..")
 
 
 def save_file(pastebin_url, file_path="cookies/cookies.txt"):
