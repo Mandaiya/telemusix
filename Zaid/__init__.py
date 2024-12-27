@@ -17,7 +17,7 @@ std_logging.basicConfig(
 )
 
 
-def LOGGER(name: str) -> logging.Logger:
+def LOGGER(name: str) -> logging.LOGGER:
     return logging.getLogger(name)
 
 
