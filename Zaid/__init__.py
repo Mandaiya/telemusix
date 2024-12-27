@@ -1,6 +1,4 @@
 import os
-
-from telethon import TelegramClient
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from config import Config
@@ -17,21 +15,24 @@ std_logging.basicConfig(
     level=std_logging.INFO
 )
 
-
 def LOGGER(name: str) -> logging.LOGGER:
     return logging.getLogger(name)
-
 
 from Config import Config
 BOT_USERNAME = Config.BOT_USERNAME
 ASSISTANT_ID = Config.ASSISTANT_ID
 
-# Cookies
-save_cookies()
+# Load cookies before initializing the client
+cookies = load_cookies()
 
+# Initialize bot client
 bot = TelegramClient('Zaid', api_id=Config.API_ID, api_hash=Config.API_HASH)
 Zaid = bot.start(bot_token=Config.BOT_TOKEN)
+
+# Initialize the assistant client using StringSession and cookies
 client = TelegramClient(StringSession(Config.STRING_SESSION), Config.API_ID, Config.API_HASH)
-call_py = PyTgCalls(client)
 client.start()
+
+# Initialize call functionality
+call_py = PyTgCalls(client)
 call_py.start()
