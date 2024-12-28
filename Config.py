@@ -29,4 +29,7 @@ class Config:
     COOKIES_FILE = getenv("COOKIES_FILE", "cookies.txt")  # Load the COOKIES variable
     
     # Debugging: Confirm the value of COOKIES
-    print(f"COOKIES_FILE loaded: {COOKIES_FILE}")
+    # print(f"COOKIES_FILE loaded: {COOKIES_FILE}")
+
+    COOKIES = getenv("COOKIES", None)
+    # https://batbin.me
