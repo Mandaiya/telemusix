@@ -5,11 +5,11 @@ import Config
 logging.basicConfig(level=logging.DEBUG)
 
 def load_cookies():
-    cookies_file = Config.COOKIES
-    if os.path.exists(cookies_file):
-        with open(cookies_file, 'r') as file:
+    cookies_file = Config.cookie
+    if os.path.exists(cookie):
+        with open(cookie, 'r') as file:
             cookies = file.read()
-            logging.info("Cookies loaded successfully.")
+            logging.info("Cookie loaded successfully.")
             return cookies
-    logging.warning("Cookies file not found.")
+    logging.warning("Cookie file not found.")
     return None
